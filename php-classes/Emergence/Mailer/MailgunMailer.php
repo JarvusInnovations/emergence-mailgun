@@ -7,7 +7,7 @@ class MailgunMailer extends AbstractMailer
     public static $apiKey;
     public static $domain;
 
-    public static function send($to, $subject, $body, $from = false, $options = array())
+    public static function send($to, $subject, $body, $from = false, $options = [])
     {
         if (!$from) {
             $from = static::getDefaultFrom();
@@ -15,12 +15,12 @@ class MailgunMailer extends AbstractMailer
 
 #        Full options can be found here: https://documentation.mailgun.com/en/latest/api-sending.html#sending
 
-        return static::apiPost(array_merge($options, array(
+        return static::apiPost(array_merge($options, [
             'to' => $to
             ,'from' => $from
             ,'subject' => $subject
             ,'html' => $body
-        )));
+        ]));
     }
 
     protected static function apiPost($data)

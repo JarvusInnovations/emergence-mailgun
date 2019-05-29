@@ -4,8 +4,8 @@ namespace Emergence\Mailgun;
 
 class API
 {
-    public static $apiKey = '';
-    public static $domain = '';
+    public static $apiKey;
+    public static $domain;
 
     public static $baseUrl = 'https://api.mailgun.net/v3/';
 

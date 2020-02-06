@@ -15,12 +15,14 @@ class Mailer extends AbstractMailer
             $from = static::getDefaultFrom();
         }
 
-#        Full options can be found here: https://documentation.mailgun.com/en/latest/api-sending.html#sending
-        return API::request('/messages', array_merge($options, [
-            'to' => $to,
-            'from' => $from,
-            'subject' => $subject,
-            'html' => $body
-        ]));
+        // Full options can be found here: https://documentation.mailgun.com/en/latest/api-sending.html#sending
+        return API::request('/messages', [
+            'post' => [
+                'to' => $to,
+                'from' => $from,
+                'subject' => $subject,
+                'html' => $body
+            ]
+        ]);
     }
 }

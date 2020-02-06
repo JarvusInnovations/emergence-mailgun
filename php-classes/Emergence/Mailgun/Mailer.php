@@ -2,7 +2,7 @@
 
 namespace Emergence\Mailgun;
 
-use Emergence\Mailgun\API;
+use Emergence\Mailer\AbstractMailer;
 
 class Mailer extends AbstractMailer
 {
